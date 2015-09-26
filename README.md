@@ -109,3 +109,7 @@ When passing `data` attributes through the array, use `data` as the key, then an
     ['data' => ['one' => 'hello', 'two' => 'world']]
 
 This works the same way Yii handles options being passed. In fact, these options are passed to Yii to process.
+
+## TODO
+
+Update this readme :) It's a mess!
