@@ -1,0 +1,21 @@
+{
+    "name": "wadeshuler/yii2-sliderrevolution",
+    "description": "Yii2 Slider Revolution jQuery Wrapper Extension",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","wadeshuler","sliderrevolution","slider","revolution"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wade Shuler",
+            "email": "WadeShuler@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "wadeshuler\\sliderrevolution\\": ""
+        }
+    }
+}
