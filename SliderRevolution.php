@@ -77,7 +77,7 @@ class SliderRevolution extends \yii\base\Widget
             throw new InvalidConfigException('Slider Revolution Error: You must have at least 1 slide!');
         }
 
-        $asset = RevolutionAsset::register($this->view);
+        $asset = SliderAsset::register($this->view);
         $this->basePath = $asset->basePath;
         $this->baseUrl = $asset->baseUrl;
     }
