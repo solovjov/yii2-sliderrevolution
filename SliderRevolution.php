@@ -3,7 +3,7 @@
 namespace wadeshuler\sliderrevolution;
 
 use wadeshuler\sliderrevolution\SliderAsset;
-
+use yii\helpers\Json;
 use yii\helpers\Html;
 use yii\base\InvalidConfigException;
 
@@ -101,18 +101,17 @@ class SliderRevolution extends \yii\base\Widget
             throw new InvalidConfigException('Slider Revolution Error: Wrapper requires an id or a class!');
         }
 
-        $config = '';
+        $config = Json::encode($this->config);
+        /*
         foreach($this->config as $key => $val) {
             $config .= $key .':' . $val . ',' . PHP_EOL;
         }
-        $code = "
+        */
+        $code = <<<JS
         jQuery(document).ready(function() {
-            jQuery('" . $jqueryIdentifier . "').revolution(
-            {
-                " . $config . "
-            });
+            jQuery('" . $jqueryIdentifier . "').revolution($config);
         });
-        ";
+        JS;
 
         $this->view->registerJs($code, \yii\web\View::POS_END, 'yii2-sliderrevolution');
     }
