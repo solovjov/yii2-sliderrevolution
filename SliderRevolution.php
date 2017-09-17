@@ -92,7 +92,7 @@ class SliderRevolution extends \yii\base\Widget
 
     public function buildJsScript()
     {
-        $jqueryIdentifier;
+        $jqueryIdentifier = null;
         if ( isset($this->wrapper['id']) ) {
             $jqueryIdentifier = '#' . $this->wrapper['id'];
         } elseif ( isset($this->wrapper['class']) ) {
@@ -102,17 +102,12 @@ class SliderRevolution extends \yii\base\Widget
         }
 
         $config = Json::encode($this->config);
-        /*
-        foreach($this->config as $key => $val) {
-            $config .= $key .':' . $val . ',' . PHP_EOL;
-        }
-        */
+        
         $code = <<<JS
-        jQuery(document).ready(function() {
-            jQuery('" . $jqueryIdentifier . "').revolution($config);
-        });
-        JS;
-
+            jQuery(document).ready(function() {
+                jQuery("$jqueryIdentifier").revolution($config);
+            });
+JS;
         $this->view->registerJs($code, \yii\web\View::POS_END, 'yii2-sliderrevolution');
     }
 
